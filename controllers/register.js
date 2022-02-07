@@ -1,7 +1,7 @@
 export const handleRegister = (bcryptjs, db) => (req, res) => {
   let { email, name, password } = req.body;
   if (!email || !name || !password) {
-    res.status(400).json({ message: "Registration Failed." });
+    return res.status(400).json({ message: "Registration Failed. Missing Fields." });
   } else {
     // hashing password
     let salt = bcryptjs.genSaltSync(10);
