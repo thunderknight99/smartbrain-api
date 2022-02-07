@@ -46,6 +46,6 @@ app.post("/recognize", handleRecognize);
 
 
 // Starting the Server
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("App is running");
 });
