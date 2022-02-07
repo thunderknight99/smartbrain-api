@@ -2,7 +2,7 @@ import clarifai from "clarifai";
 
 export const handleRecognize = (req, res) => {
   let app = new clarifai.App({
-    apiKey: "35e64733e19649919d1014d9b47b987e",
+    apiKey: process.env.CLARIFAI_API_KEY,
   });
 
   let { imageUrl } = req.body;
